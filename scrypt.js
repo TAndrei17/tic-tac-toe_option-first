@@ -7,7 +7,8 @@ const createField = () => {
     for (let j = 0; j < 3; j += 1) {
       const cell = str.insertCell();
       cell.classList.add('cell');
-      cell.innerHTML = '<span class="xo"></span>';
+      cell.setAttribute('cellNum', j);
+      // console.log(cell);
     }
   }
   return tableBox;
