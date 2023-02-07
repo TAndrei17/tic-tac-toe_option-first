@@ -1,23 +1,23 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    font: bold 20px Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font: bold 20px Roboto, sans-serif;
 }
 
 .game {
-    background-color: #FFED73;
-    border-collapse: collapse;
+  background-color: #ffed73;
+  border-collapse: collapse;
 }
 .cell {
-    width: 120px;
-    height: 120px;
-    color: #7080D7;
-    text-align: center;
-    border-color: #BD63D4;
-    border-width: 3px;
-    border-style: solid;
+  width: 120px;
+  height: 120px;
+  color: #7080d7;
+  text-align: center;
+  border-color: #bd63d4;
+  border-width: 3px;
+  border-style: solid;
 }
