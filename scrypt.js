@@ -1,4 +1,4 @@
-// clearimport isWinner from './findwinner.js';
+// import isWinner from './findwinner.js';
 
 const createField = () => {
   const tableBox = document.createElement('table');

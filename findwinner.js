@@ -16,4 +16,4 @@ const isWinner = (array) => {
   }
 };
 
-export default isWinner;
+// export default isWinner;
