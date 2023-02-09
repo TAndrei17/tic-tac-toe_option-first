@@ -1,4 +1,11 @@
 {
+  "name": "npm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "scrypt.js",
+  "author": "Andrei Trunkin",
+  "lisence": "ISC",
   "devDependencies": {
     "eslint": "^8.33.0",
     "eslint-config-airbnb-base": "^15.0.0",

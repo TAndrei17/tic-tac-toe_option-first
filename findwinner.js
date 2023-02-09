@@ -1,6 +1,6 @@
 const isWinner = (array) => {
   const checkRow = array.reduce((acc, item) => {
-    const [i,] = item;
+    const [i, ] = item;
     acc[i] = acc[i] ? acc[i] + 1 : 1;
     return acc;
   }, {});
@@ -16,4 +16,4 @@ const isWinner = (array) => {
   }
 };
 
-// export default isWinner;
+export default isWinner;
