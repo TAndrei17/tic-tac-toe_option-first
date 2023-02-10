@@ -39,6 +39,7 @@ const goToPlay = () => {
       divWinner.append(text);
       divRoot.classList.add('winner');
       document.body.append(divWinner);
+      tableAll.replaceWith(divWinner);
     }
     // check O's collection on every step
     const hasWinnerO = isWinner(allOs);
@@ -50,6 +51,7 @@ const goToPlay = () => {
       divWinner.append(text);
       divRoot.classList.add('winner');
       document.body.append(divWinner);
+      tableAll.replaceWith(divWinner);
     }
   });
 };
