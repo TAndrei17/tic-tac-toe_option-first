@@ -11,6 +11,7 @@ const goToPlay = () => {
   const allOs = [];
   tableAll.addEventListener('click', (event) => {
     const { target } = event;
+    const getCellNum = event.target.getAttribute('cellNum');
     // 'X' starts
     if (target.textContent === '') {
       target.textContent = cellText;
@@ -19,12 +20,12 @@ const goToPlay = () => {
     if (target.textContent === 'X' || target.textContent === 'O') {
       cellText = cellText === 'X' ? 'O' : 'X';
     }
-    if (target.textContent === 'X') {
+    if ((target.textContent === 'X') && (!allXs.includes(getCellNum))) {
       const newX = target.getAttribute('cellNum');
       // collect every step of 'X'
       allXs.push(newX);
     }
-    if (target.textContent === 'O') {
+    if ((target.textContent === 'O') && (!allOs.includes(getCellNum))) {
       const newO = target.getAttribute('cellNum');
       // collect every step of 'O'
       allOs.push(newO);
