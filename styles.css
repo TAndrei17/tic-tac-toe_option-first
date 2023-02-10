@@ -1,11 +1,12 @@
 body {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
-  font: bold 20px Roboto, sans-serif;
+  font: bold 50px Roboto, sans-serif;
 }
 
 .game {
@@ -21,4 +22,10 @@ body {
   border-color: #bd63d4;
   border-width: 3px;
   border-style: solid;
+}
+
+.winner {
+  color: #7080d7;
+  text-align: center;
+  font-weight: 700;
 }
