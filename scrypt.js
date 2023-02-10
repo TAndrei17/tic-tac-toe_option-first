@@ -53,6 +53,15 @@ const goToPlay = () => {
       document.body.append(divWinner);
       tableAll.replaceWith(divWinner);
     }
+    const getWinner = document.querySelector('.winner');
+    if (([...allXs, ...allOs].length === 9) && (!getWinner)) {
+      const divWinner = document.createElement('div');
+      const text = document.createTextNode('Draw!');
+      divWinner.append(text);
+      divRoot.classList.add('winner');
+      document.body.append(divWinner);
+      tableAll.replaceWith(divWinner);
+    }
   });
 };
 
