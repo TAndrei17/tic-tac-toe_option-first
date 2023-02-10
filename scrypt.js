@@ -1,20 +1,5 @@
-import isWinner from './findwinner.js';
-
-const createField = () => {
-  const tableBox = document.createElement('table');
-  tableBox.classList.add('game');
-  for (let i = 1; i < 4; i += 1) {
-    const str = tableBox.insertRow();
-    str.classList.add('line');
-    for (let j = 1; j < 4; j += 1) {
-      const cell = str.insertCell();
-      cell.classList.add('cell');
-      const cellNum = `${i}${j}`;
-      cell.setAttribute('cellNum', cellNum);
-    }
-  }
-  return tableBox;
-};
+import createField from './createfield.js';
+import { isWinner, isWinnerDiagonal } from './findwinner.js';
 
 const goToPlay = () => {
   const tableAll = createField();
@@ -22,6 +7,7 @@ const goToPlay = () => {
   divRoot.append(tableAll);
   let cellText = 'X';
   const allXs = [];
+  const allOs = [];
   tableAll.addEventListener('click', (event) => {
     const { target } = event;
     if (target.textContent === '') {
@@ -31,13 +17,27 @@ const goToPlay = () => {
       cellText = cellText === 'X' ? 'O' : 'X';
     }
     if (target.textContent === 'X') {
-      const num = target.getAttribute('cellNum');
-      allXs.push(num);
+      const newX = target.getAttribute('cellNum');
+      allXs.push(newX);
     }
-    const hasWinner = isWinner(allXs);
-    if (hasWinner) {
+    if (target.textContent === 'O') {
+      const newO = target.getAttribute('cellNum');
+      allOs.push(newO);
+    }
+    const hasWinnerX = isWinner(allXs);
+    const hasWinnerXDiagonal = isWinnerDiagonal(allXs);
+    if ((hasWinnerX) || (hasWinnerXDiagonal)) {
       const divWinner = document.createElement('div');
-      const text = document.createTextNode('X Win!!!');
+      const text = document.createTextNode('Congrats! X is winner!');
+      divWinner.append(text);
+      divRoot.classList.add('winner');
+      document.body.append(divWinner);
+    }
+    const hasWinnerO = isWinner(allOs);
+    const hasWinnerODiagonal = isWinnerDiagonal(allOs);
+    if ((hasWinnerO) || (hasWinnerODiagonal)) {
+      const divWinner = document.createElement('div');
+      const text = document.createTextNode('Congrats! O is winner!');
       divWinner.append(text);
       divRoot.classList.add('winner');
       document.body.append(divWinner);
