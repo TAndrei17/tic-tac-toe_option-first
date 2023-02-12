@@ -11,7 +11,7 @@ const goToPlay = () => {
   // here attributes of every cell is collected (steps collection)
   const allXs = [];
   const allOs = [];
-  turn.textContent = `${cellText} plays`;
+  turn.textContent = `'${cellText}' starts`;
   tableAll.addEventListener('click', (event) => {
     const { target } = event;
     const getCellNum = event.target.getAttribute('cellNum');
@@ -23,7 +23,7 @@ const goToPlay = () => {
     if (target.textContent === 'X' || target.textContent === 'O') {
       cellText = cellText === 'X' ? 'O' : 'X';
     }
-    turn.textContent = `${cellText} plays`;
+    turn.textContent = `'${cellText}' now`;
     if ((target.textContent === 'X') && (!allXs.includes(getCellNum))) {
       const newX = target.getAttribute('cellNum');
       // collect every step of 'X'
