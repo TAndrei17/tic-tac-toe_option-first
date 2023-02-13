@@ -1,4 +1,5 @@
 import createField from './createfield.js';
+import createFinalDiv from './createfinaldiv.js';
 import { isWinner, isWinnerDiagonal } from './findwinner.js';
 
 const goToPlay = () => {
@@ -39,19 +40,11 @@ const goToPlay = () => {
     const hasWinnerXDiagonal = isWinnerDiagonal(allXs);
     if ((hasWinnerX) || (hasWinnerXDiagonal)) {
       turn.remove();
-      // if winner appears is created <div> with class '.winner'
-      const divWinner = document.createElement('div');
-      const paragraph = document.createElement('p');
-      const text = document.createTextNode('CONGRATS! \'X\' IS WINNER!');
-      paragraph.append(text);
-      divWinner.append(paragraph);
-      const button = document.createElement('button');
-      const textButton = document.createTextNode('START AGAIN');
-      button.append(textButton);
-      divWinner.append(button);
+      // if winner appears is created <div> and the container receive class '.winner'
+      const finalDiv = createFinalDiv('CONGRATS! \'X\' IS WINNER!');
       divRoot.classList.add('winner');
-      document.body.append(divWinner);
-      tableAll.replaceWith(divWinner);
+      document.body.append(finalDiv);
+      tableAll.replaceWith(finalDiv);
       const butt = document.querySelector('div > button');
       butt.addEventListener('click', () => document.location.reload());
     }
@@ -60,37 +53,21 @@ const goToPlay = () => {
     const hasWinnerODiagonal = isWinnerDiagonal(allOs);
     if ((hasWinnerO) || (hasWinnerODiagonal)) {
       turn.remove();
-      // if winner appears is created <div> with class '.winner'
-      const divWinner = document.createElement('div');
-      const paragraph = document.createElement('p');
-      const text = document.createTextNode('CONGRATS! \'O\' IS WINNER!');
-      paragraph.append(text);
-      divWinner.append(paragraph);
-      const button = document.createElement('button');
-      const textButton = document.createTextNode('START AGAIN');
-      button.append(textButton);
-      divWinner.append(button);
+      // if winner appears is created <div> and the container receive class '.winner'
+      const finalDiv = createFinalDiv('CONGRATS! \'O\' IS WINNER!');
       divRoot.classList.add('winner');
-      document.body.append(divWinner);
-      tableAll.replaceWith(divWinner);
+      document.body.append(finalDiv);
+      tableAll.replaceWith(finalDiv);
       const butt = document.querySelector('div > button');
       butt.addEventListener('click', () => document.location.reload());
     }
     const getWinner = document.querySelector('.winner');
     if (([...allXs, ...allOs].length === 9) && (!getWinner)) {
       turn.remove();
-      const divWinner = document.createElement('div');
-      const paragraph = document.createElement('p');
-      const text = document.createTextNode('DRAW!');
-      paragraph.append(text);
-      divWinner.append(paragraph);
-      const button = document.createElement('button');
-      const textButton = document.createTextNode('START AGAIN');
-      button.append(textButton);
-      divWinner.append(button);
+      const finalDiv = createFinalDiv('DRAW!');
       divRoot.classList.add('winner');
-      document.body.append(divWinner);
-      tableAll.replaceWith(divWinner);
+      document.body.append(finalDiv);
+      tableAll.replaceWith(finalDiv);
       const butt = document.querySelector('div > button');
       butt.addEventListener('click', () => document.location.reload());
     }
