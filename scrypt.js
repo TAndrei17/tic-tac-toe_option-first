@@ -25,12 +25,12 @@ const goToPlay = () => {
       cellText = cellText === 'X' ? 'O' : 'X';
     }
     turn.textContent = `'${cellText}' now`;
-    if ((target.textContent === 'X') && (!allXs.includes(getCellNum))) {
+    if (target.textContent === 'X' && !allXs.includes(getCellNum)) {
       const newX = target.getAttribute('cellNum');
       // collect every step of 'X'
       allXs.push(newX);
     }
-    if ((target.textContent === 'O') && (!allOs.includes(getCellNum))) {
+    if (target.textContent === 'O' && !allOs.includes(getCellNum)) {
       const newO = target.getAttribute('cellNum');
       // collect every step of 'O'
       allOs.push(newO);
@@ -38,10 +38,10 @@ const goToPlay = () => {
     // check X's collection on every step
     const hasWinnerX = isWinner(allXs);
     const hasWinnerXDiagonal = isWinnerDiagonal(allXs);
-    if ((hasWinnerX) || (hasWinnerXDiagonal)) {
+    if (hasWinnerX || hasWinnerXDiagonal) {
       turn.remove();
       // if winner appears is created <div> and the container receive class '.winner'
-      const finalDiv = createFinalDiv('CONGRATS! \'X\' IS WINNER!');
+      const finalDiv = createFinalDiv("CONGRATS! 'X' IS WINNER!");
       divRoot.classList.add('winner');
       document.body.append(finalDiv);
       tableAll.replaceWith(finalDiv);
@@ -51,10 +51,10 @@ const goToPlay = () => {
     // check O's collection on every step
     const hasWinnerO = isWinner(allOs);
     const hasWinnerODiagonal = isWinnerDiagonal(allOs);
-    if ((hasWinnerO) || (hasWinnerODiagonal)) {
+    if (hasWinnerO || hasWinnerODiagonal) {
       turn.remove();
       // if winner appears is created <div> and the container receive class '.winner'
-      const finalDiv = createFinalDiv('CONGRATS! \'O\' IS WINNER!');
+      const finalDiv = createFinalDiv("CONGRATS! 'O' IS WINNER!");
       divRoot.classList.add('winner');
       document.body.append(finalDiv);
       tableAll.replaceWith(finalDiv);
@@ -62,7 +62,7 @@ const goToPlay = () => {
       butt.addEventListener('click', () => document.location.reload());
     }
     const getWinner = document.querySelector('.winner');
-    if (([...allXs, ...allOs].length === 9) && (!getWinner)) {
+    if ([...allXs, ...allOs].length === 9 && !getWinner) {
       turn.remove();
       const finalDiv = createFinalDiv('DRAW!');
       divRoot.classList.add('winner');
