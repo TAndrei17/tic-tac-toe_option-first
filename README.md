@@ -1,6 +1,6 @@
-# The-game. Tic-Tac-Toe
+# The-game. Tic-Tac-Toe. Option 1
 
-'Tic-Tac-Toe' is a simple game for two people on one field.
+['Tic-Tac-Toe' is a simple game for two people on one field.](https://tandrei17.github.io/The-game/ "To GitHub pages")
 
 It is my first project as a front-end developer. My purpose was to apply my skills and knowledge which I received in the process of self-studying at an online school ['Hexlet'](https://hexlet.io/my "Hexlet's page") for the first 4 months.
 
