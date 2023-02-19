@@ -8,6 +8,6 @@ It is my first project as a front-end developer. My purpose was to apply my skil
 - Created all HTML/CSS/JS code myself without copy & paste;
 - Polished my skills on Git/GitHub and the command line.
 
-The main idea of the code is to use the attributes of the '<td>' DOM-elements to parse and find the winner. At the moment of formation of the playing field, each playing cell receives a unique attribute 'cellNum' - a number passed as a string. At the moment of clicking on the game cell, the attribute value is retrieved from the tag and passed to the array for processing and finding the winner.
+The main idea of the code is to use the attributes of the 'td' DOM-elements to parse and find the winner. At the moment of formation of the playing field, each playing cell receives a unique attribute 'cellNum' - a number passed as a string. At the moment of clicking on the game cell, the attribute value is retrieved from the tag and passed to the array for processing and finding the winner.
 
 AT
