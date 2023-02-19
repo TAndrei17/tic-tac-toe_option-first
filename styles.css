@@ -10,23 +10,22 @@ body {
 }
 
 .step {
-  color:#FF7373;
-  font-weight: 700;
+  color: #ff7373;
   margin: 20px;
 }
 
 .game {
-  background-color: #C9F76F;
+  background-color: #c9f76f;
   border-collapse: collapse;
 }
 
 .cell {
   width: 120px;
   height: 120px;
-  color: #FF7373; 
+  color: #ff7373;
   font-size: 90px;
   text-align: center;
-  border-color: #AD66D5;
+  border-color: #ad66d5;
   border-width: 3px;
   border-style: solid;
 }
@@ -36,13 +35,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #AD66D5;
+  color: #ad66d5;
   text-align: center;
   font-weight: 700;
 }
 
 .winner div button {
-  background: #AD66D5;
+  background: #ad66d5;
   border-radius: 10px;
   color: white;
   font-weight: 700;
